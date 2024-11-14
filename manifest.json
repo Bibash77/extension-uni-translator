@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Chrome Extension - Ctrl + Q",
+  "version": "1.5",
+  "description": "Open a dialog box with language selection and translation area when Ctrl + Q is pressed.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dialog.html", "dialog.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "trigger_popup": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "Open the dialog box"
+    }
+  }
+}

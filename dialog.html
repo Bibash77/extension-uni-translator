@@ -1,0 +1,117 @@
+<link rel="stylesheet" type="text/css" href="dialog.css">
+<style>
+  .custom-dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.custom-dialog {
+  padding: 30px;
+  width: 500px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial, sans-serif';
+}
+
+.dialog-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.dialog-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dialog-select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.dialog-textarea {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.dialog-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-button:hover {
+  background-color: #0056b3;
+}
+
+.dialog-output {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 80px;
+  overflow-y: auto;
+  background-color: #f1f1f1;
+}
+
+.dialog-close-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-close-button:hover {
+  background-color: #c82333;
+}
+
+</style>
+<div id="custom-dialog-wrapper" class="custom-dialog-wrapper">
+  <div id="custom-dialog" class="custom-dialog">
+    <h2 class="dialog-title">Translate Text</h2>
+    <label for="language-select" class="dialog-label">Select Language to Translate:</label>
+    <select id="language-select" class="dialog-select">
+      <option value="unicode">Unicode (Romanized)</option>
+      <option value="preeti">Preeti (Traditional)</option>
+    </select>
+    <textarea id="text-input" class="dialog-textarea" placeholder="Enter text to translate..."></textarea>
+    <button id="translate-button" class="dialog-button">Translate</button>
+    <div id="translation-output" class="dialog-output">Translation will be displayed here.</div>
+    <button id="close-button" class="dialog-close-button">Close</button>
+  </div>
+</div>
