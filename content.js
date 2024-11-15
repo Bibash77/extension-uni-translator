@@ -37,7 +37,7 @@ function translateText() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      translationOutput.textContent = `Translation: ${data.translatedText}`;
+      translationOutput.textContent = `${data.translatedText}`;
     })
     .catch(error => {
       translationOutput.textContent = "Error: Unable to translate the text.";
