@@ -1,8 +1,26 @@
 document.addEventListener("keydown", function (event) {
   if (event.ctrlKey && event.key.toLowerCase() === "q") {
-    createDialog();
+    toggleDialog();
   }
 });
+
+function toggleDialog() {
+  let existingDialogWrapper = document.getElementById("custom-dialog-wrapper");
+
+  if (existingDialogWrapper) {
+    // If the dialog is already open, remove it (close it)
+    document.body.removeChild(existingDialogWrapper);
+  } else {
+    // If the dialog is not open, create and open it
+    createDialog();
+  }
+}
+
+// document.addEventListener("keydown", function (event) {
+//   if (event.ctrlKey && event.key.toLowerCase() === "q") {
+//     createDialog();
+//   }
+// });
 
 function createDialog() {
   let existingDialogWrapper = document.getElementById("custom-dialog-wrapper");
